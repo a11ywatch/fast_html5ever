@@ -78,11 +78,7 @@ impl TreeSink for Sink {
         id
     }
 
-    fn create_comment(&mut self, text: StrTendril) -> usize {
-        let id = self.get_id();
-        println!("Created comment \"{}\" as {}", text.escape_default(), id);
-        id
-    }
+    fn create_comment(&mut self, _: StrTendril) {}
 
     #[allow(unused_variables)]
     fn create_pi(&mut self, target: StrTendril, value: StrTendril) -> usize {

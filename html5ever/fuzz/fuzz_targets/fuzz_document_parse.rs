@@ -1,12 +1,12 @@
 #![no_main]
 use libfuzzer_sys::fuzz_target;
 
-use std::io::BufReader;
 use html5ever::driver::ParseOpts;
-use markup5ever_rcdom::{RcDom, SerializableHandle};
 use html5ever::tendril::TendrilSink;
 use html5ever::tree_builder::TreeBuilderOpts;
 use html5ever::{parse_document, serialize};
+use markup5ever_rcdom::{RcDom, SerializableHandle};
+use std::io::BufReader;
 
 // Target inspired by the Rust-Fuzz project
 // https://github.com/rust-fuzz/targets

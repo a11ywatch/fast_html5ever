@@ -57,9 +57,7 @@ impl TreeSink for LineCountingDOM {
         self.rcdom.create_element(name, attrs, flags)
     }
 
-    fn create_comment(&mut self, text: StrTendril) -> Handle {
-        self.rcdom.create_comment(text)
-    }
+    fn create_comment(&mut self, text: StrTendril) {}
 
     fn create_pi(&mut self, target: StrTendril, content: StrTendril) -> Handle {
         self.rcdom.create_pi(target, content)

@@ -483,16 +483,11 @@ where
         Done
     }
 
-    fn append_comment_to_doc(&mut self, text: StrTendril) -> XmlProcessResult {
-        let comment = self.sink.create_comment(text);
-        self.sink.append(&self.doc_handle, AppendNode(comment));
+    fn append_comment_to_doc(&mut self, _: StrTendril) -> XmlProcessResult {
         Done
     }
 
-    fn append_comment_to_tag(&mut self, text: StrTendril) -> XmlProcessResult {
-        let target = current_node(&self.open_elems);
-        let comment = self.sink.create_comment(text);
-        self.sink.append(target, AppendNode(comment));
+    fn append_comment_to_tag(&mut self, _: StrTendril) -> XmlProcessResult {
         Done
     }
 

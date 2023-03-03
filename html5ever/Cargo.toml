@@ -1,6 +1,6 @@
 [package]
 
-name = "html5ever"
+name = "fast_html5ever"
 version = "0.26.0"
 authors = [ "The html5ever Project Developers" ]
 license = "MIT OR Apache-2.0"

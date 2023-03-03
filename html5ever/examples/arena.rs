@@ -249,9 +249,7 @@ impl<'arena> TreeSink for Sink<'arena> {
         })
     }
 
-    fn create_comment(&mut self, text: StrTendril) -> Ref<'arena> {
-        self.new_node(NodeData::Comment { contents: text })
-    }
+    fn create_comment(&mut self, text: StrTendril) {}
 
     fn create_pi(&mut self, target: StrTendril, data: StrTendril) -> Ref<'arena> {
         self.new_node(NodeData::ProcessingInstruction {

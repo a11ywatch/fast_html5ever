@@ -7,7 +7,7 @@
 // option. This file may not be copied, modified, or distributed
 // except according to those terms.
 
-#![crate_name = "html5ever"]
+#![crate_name = "fast_html5ever"]
 #![crate_type = "dylib"]
 #![cfg_attr(test, deny(warnings))]
 #![allow(unused_parens)]

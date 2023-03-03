@@ -282,9 +282,7 @@ impl TreeSink for RcDom {
         })
     }
 
-    fn create_comment(&mut self, text: StrTendril) -> Handle {
-        Node::new(NodeData::Comment { contents: text })
-    }
+    fn create_comment(&mut self, _text: StrTendril) {}
 
     fn create_pi(&mut self, target: StrTendril, data: StrTendril) -> Handle {
         Node::new(NodeData::ProcessingInstruction {

@@ -265,8 +265,8 @@ impl<Sink: TokenSink> Tokenizer<Sink> {
             self.current_line += 1;
         }
 
-        if self.opts.exact_errors &&
-            match c as u32 {
+        if self.opts.exact_errors
+            && match c as u32 {
                 0x01..=0x08 | 0x0B | 0x0E..=0x1F | 0x7F..=0x9F | 0xFDD0..=0xFDEF => true,
                 n if (n & 0xFFFE) == 0xFFFE => true,
                 _ => false,
@@ -1444,23 +1444,23 @@ impl<Sink: TokenSink> Tokenizer<Sink> {
     fn eof_step(&mut self) -> ProcessResult<Sink::Handle> {
         debug!("processing EOF in state {:?}", self.state);
         match self.state {
-            states::Data |
-            states::RawData(Rcdata) |
-            states::RawData(Rawtext) |
-            states::RawData(ScriptData) |
-            states::Plaintext => go!(self: eof),
+            states::Data
+            | states::RawData(Rcdata)
+            | states::RawData(Rawtext)
+            | states::RawData(ScriptData)
+            | states::Plaintext => go!(self: eof),
 
-            states::TagName |
-            states::RawData(ScriptDataEscaped(_)) |
-            states::BeforeAttributeName |
-            states::AttributeName |
-            states::AfterAttributeName |
-            states::BeforeAttributeValue |
-            states::AttributeValue(_) |
-            states::AfterAttributeValueQuoted |
-            states::SelfClosingStartTag |
-            states::ScriptDataEscapedDash(_) |
-            states::ScriptDataEscapedDashDash(_) => go!(self: error_eof; to Data),
+            states::TagName
+            | states::RawData(ScriptDataEscaped(_))
+            | states::BeforeAttributeName
+            | states::AttributeName
+            | states::AfterAttributeName
+            | states::BeforeAttributeValue
+            | states::AttributeValue(_)
+            | states::AfterAttributeValueQuoted
+            | states::SelfClosingStartTag
+            | states::ScriptDataEscapedDash(_)
+            | states::ScriptDataEscapedDashDash(_) => go!(self: error_eof; to Data),
 
             states::TagOpen => go!(self: error_eof; emit '<'; to Data),
 
@@ -1486,25 +1486,25 @@ impl<Sink: TokenSink> Tokenizer<Sink> {
                 go!(self: to RawData ScriptDataEscaped DoubleEscaped)
             },
 
-            states::CommentStart |
-            states::CommentStartDash |
-            states::Comment |
-            states::CommentEndDash |
-            states::CommentEnd |
-            states::CommentEndBang => go!(self: error_eof; emit_comment; to Data),
+            states::CommentStart
+            | states::CommentStartDash
+            | states::Comment
+            | states::CommentEndDash
+            | states::CommentEnd
+            | states::CommentEndBang => go!(self: error_eof; emit_comment; to Data),
 
             states::Doctype | states::BeforeDoctypeName => {
                 go!(self: error_eof; create_doctype; force_quirks; emit_doctype; to Data)
             },
 
-            states::DoctypeName |
-            states::AfterDoctypeName |
-            states::AfterDoctypeKeyword(_) |
-            states::BeforeDoctypeIdentifier(_) |
-            states::DoctypeIdentifierDoubleQuoted(_) |
-            states::DoctypeIdentifierSingleQuoted(_) |
-            states::AfterDoctypeIdentifier(_) |
-            states::BetweenDoctypePublicAndSystemIdentifiers => {
+            states::DoctypeName
+            | states::AfterDoctypeName
+            | states::AfterDoctypeKeyword(_)
+            | states::BeforeDoctypeIdentifier(_)
+            | states::DoctypeIdentifierDoubleQuoted(_)
+            | states::DoctypeIdentifierSingleQuoted(_)
+            | states::AfterDoctypeIdentifier(_)
+            | states::BetweenDoctypePublicAndSystemIdentifiers => {
                 go!(self: error_eof; force_quirks; emit_doctype; to Data)
             },
 

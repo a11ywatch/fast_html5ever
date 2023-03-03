@@ -89,9 +89,9 @@ where
         expanded_name!(html "template") => flags.template = true,
         expanded_name!(mathml "annotation-xml") => {
             flags.mathml_annotation_xml_integration_point = attrs.iter().any(|attr| {
-                attr.name.expanded() == expanded_name!("", "encoding") &&
-                    (attr.value.eq_ignore_ascii_case("text/html") ||
-                        attr.value.eq_ignore_ascii_case("application/xhtml+xml"))
+                attr.name.expanded() == expanded_name!("", "encoding")
+                    && (attr.value.eq_ignore_ascii_case("text/html")
+                        || attr.value.eq_ignore_ascii_case("application/xhtml+xml"))
             })
         },
         _ => {},
@@ -151,7 +151,7 @@ pub trait TreeSink {
     ) -> Self::Handle;
 
     /// Create a comment node.
-    fn create_comment(&mut self, text: StrTendril) -> Self::Handle;
+    fn create_comment(&mut self, text: StrTendril);
 
     /// Create a Processing Instruction node.
     fn create_pi(&mut self, target: StrTendril, data: StrTendril) -> Self::Handle;
