@@ -1,11 +1,11 @@
-# html5ever
+# fast_html5ever
 
 [![Build Status](https://travis-ci.com/servo/html5ever.svg?branch=master)](https://travis-ci.com/servo/html5ever)
 [![crates.io](https://img.shields.io/crates/v/html5ever.svg)](https://crates.io/crates/html5ever)
 
 [API Documentation][API documentation]
 
-html5ever is an HTML parser developed as part of the [Servo][] project.
+fast_html5ever a fork of html5ever the HTML parser developed as part of the [Servo][] project.
 
 It can parse and serialize HTML according to the [WHATWG](https://whatwg.org/) specs (aka "HTML5").  However, there are some differences in the actual behavior currently, most of which are documented [in the bug tracker][].  html5ever passes all tokenizer tests from [html5lib-tests][], with most tree builder tests outside of the unimplemented features.  The goal is to pass all html5lib tests, while also providing all hooks needed by a production web browser, e.g. `document.write`.
 
