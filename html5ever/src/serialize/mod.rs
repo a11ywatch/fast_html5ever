@@ -8,8 +8,8 @@
 // except according to those terms.
 
 use log::warn;
-pub use markup5ever::serialize::{AttrRef, Serialize, Serializer, TraversalScope};
-use markup5ever::{local_name, namespace_url, ns};
+pub use fast_markup5ever::serialize::{AttrRef, Serialize, Serializer, TraversalScope};
+use fast_markup5ever::{local_name, namespace_url, ns};
 use std::default::Default;
 use std::io::{self, Write};
 

@@ -13,7 +13,7 @@
 #![allow(unused_parens)]
 
 pub use driver::{parse_document, parse_fragment, ParseOpts, Parser};
-pub use markup5ever::*;
+pub use fast_markup5ever::*;
 
 pub use serialize::serialize;
 

@@ -1,7 +1,7 @@
 [package]
 
 name = "fast_html5ever"
-version = "0.26.1"
+version = "0.26.4"
 authors = [ "The html5ever Project Developers" ]
 license = "MIT OR Apache-2.0"
 repository = "https://github.com/a11ywatch/fast_html5ever"
@@ -14,7 +14,7 @@ edition = "2018"
 [dependencies]
 log = "0.4"
 mac = "0.1"
-markup5ever = { version = "0.11", path = "../markup5ever" }
+fast_markup5ever = { version = "0.11", path = "../markup5ever" }
 
 [dev-dependencies]
 typed-arena = "2.0.2"

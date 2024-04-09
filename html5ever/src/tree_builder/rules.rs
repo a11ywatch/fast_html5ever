@@ -12,7 +12,7 @@
 use crate::tokenizer::states::{Plaintext, Rawtext, Rcdata, ScriptData};
 use crate::tree_builder::tag_sets::*;
 use crate::tree_builder::types::*;
-use markup5ever::{expanded_name, local_name, namespace_prefix, namespace_url, ns};
+use fast_markup5ever::{expanded_name, local_name, namespace_prefix, namespace_url, ns};
 
 use std::borrow::ToOwned;
 

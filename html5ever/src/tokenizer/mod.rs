@@ -25,7 +25,7 @@ use crate::util::str::lower_ascii_letter;
 
 use log::{debug, trace};
 use mac::format_if;
-use markup5ever::{namespace_url, ns, small_char_set};
+use fast_markup5ever::{namespace_url, ns, small_char_set};
 use std::borrow::Cow::{self, Borrowed};
 use std::collections::BTreeMap;
 use std::default::Default;
@@ -1535,7 +1535,7 @@ mod test {
     use super::interface::{EndTag, StartTag, Tag, TagKind};
     use super::interface::{TagToken, Token};
 
-    use markup5ever::buffer_queue::BufferQueue;
+    use fast_markup5ever::buffer_queue::BufferQueue;
     use std::mem::replace;
 
     use crate::LocalName;
