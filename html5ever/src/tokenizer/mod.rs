@@ -851,7 +851,7 @@ impl<Sink: TokenSink> Tokenizer<Sink> {
                 if self.have_appropriate_end_tag() {
                     match c {
                         '\t' | '\n' | '\x0C' | ' ' => go!(self: to BeforeAttributeName),
-                        '/' => go!(self: to SelfClosingStartTag),
+                        '/' => go!(self: clear_temp; to SelfClosingStartTag),
                         '>' => go!(self: emit_tag Data),
                         _ => (),
                     }

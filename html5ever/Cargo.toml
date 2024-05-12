@@ -1,7 +1,7 @@
 [package]
 
 name = "fast_html5ever"
-version = "0.26.4"
+version = "0.26.5"
 authors = [ "The html5ever Project Developers" ]
 license = "MIT OR Apache-2.0"
 repository = "https://github.com/a11ywatch/fast_html5ever"
